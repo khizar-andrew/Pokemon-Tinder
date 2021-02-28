@@ -12,6 +12,7 @@
       justify-content: center;
       align-items: center;
       padding-bottom: 40px;
+      width: 100%;
     }
 
     .appBanner img {
@@ -38,7 +39,7 @@
 
     .carousel {
       transform-style: preserve-3d;
-      width: 50%;
+      width: 80%;
       margin: 10px 30px;
       padding-bottom: 25px;
       padding-top: 40px;
@@ -49,6 +50,16 @@
       align-items: center;
       flex-direction: column;
       padding-bottom: 150px;
+    }
+
+    #pokerInterface .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pokeInterface li img {
+      width: 140px;
     }
 
 
@@ -82,7 +93,7 @@
     }
 
     h2 {
-      color: white;
+      color: black;
     }
 
     /* BUTTONS */
@@ -137,9 +148,7 @@
     footer {
       padding-bottom: 60px;
       padding-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
 
       a {
         text-decoration: none;
@@ -153,7 +162,7 @@
     .carousel2 {
       position: relative;
       transform-style: preserve-3d;
-      width: 50%;
+      width: 80%;
       margin: 10px 30px;
       padding-bottom: 25px;
       padding-top: 40px;
@@ -192,7 +201,7 @@
     }
 
     .carouselButtonNext {
-      top: 550px;
+      top: 500px;
       left: 410px;
       font-size: 2.5rem;
       display: flex;
@@ -201,7 +210,7 @@
     }
 
     .carouselButtonPrevious {
-      top: 550px;
+      top: 500px;
       right: 410px;
       font-size: 2.5rem;
       display: flex;
@@ -215,8 +224,16 @@
         // MEDIA QUERIES
         // MEDIA QUERIES
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       
+      .carousel {
+        background-color: red;
+      }
+      
+      .bigWrapper {
+        max-width: 800px;
+        min-width: 450px;
+      }
     }
 
 

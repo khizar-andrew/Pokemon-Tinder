@@ -26,6 +26,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 40px;
+  width: 100%;
 }
 
 .appBanner img {
@@ -63,7 +64,7 @@ body {
 .carousel {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  width: 50%;
+  width: 80%;
   margin: 10px 30px;
   padding-bottom: 25px;
   padding-top: 40px;
@@ -83,6 +84,22 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-bottom: 150px;
+}
+
+#pokerInterface .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#pokeInterface li img {
+  width: 140px;
 }
 
 .carousel__photo {
@@ -124,7 +141,7 @@ body {
 }
 
 h2 {
-  color: white;
+  color: black;
 }
 
 /* BUTTONS */
@@ -178,15 +195,7 @@ h2 {
 footer {
   padding-bottom: 60px;
   padding-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
 }
 
 footer a {
@@ -199,7 +208,7 @@ footer a {
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  width: 50%;
+  width: 80%;
   margin: 10px 30px;
   padding-bottom: 25px;
   padding-top: 40px;
@@ -242,7 +251,7 @@ footer a {
 }
 
 .carouselButtonNext {
-  top: 550px;
+  top: 500px;
   left: 410px;
   font-size: 2.5rem;
   display: -webkit-box;
@@ -257,7 +266,7 @@ footer a {
 }
 
 .carouselButtonPrevious {
-  top: 550px;
+  top: 500px;
   right: 410px;
   font-size: 2.5rem;
   display: -webkit-box;
@@ -269,6 +278,16 @@ footer a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    background-color: red;
+  }
+  .bigWrapper {
+    max-width: 800px;
+    min-width: 450px;
+  }
 }
 
 html {
