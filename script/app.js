@@ -39,21 +39,27 @@ const mainTypes = Object.keys(colors);
 const tinderApp = () => {
 
     const promises = [];
-    for (let i = 1; i <= 7; i++){
+    for (let i = 1; i <=8; i++){
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url)
         .then((res) => res.json()));
     }
     Promise.all(promises).then(results => {
-        const pokemon = results.map(data => ({
-            name: data.name.toUpperCase(),
-            id: data.id,
-            height: data.height,
-            image: data.sprites['front_default'],
-            pokeType: data.types.map((type) => type.type.name).join(" and ")
-           
-        }));
-        console.log(pokemon);
+        const pokemon = results.map(data => {
+            // console.log(type);
+            let pokeTypes = data.types.map((type) => type.type.name);
+            let type = mainTypes.find(type => pokeTypes.indexOf(type));
+            // let color = colors[type];
+            let item = {
+                name: data.name.toUpperCase(),
+                id: data.id,
+                height: data.height,
+                pokeType: data.types.map((type) => type.type.name).join(" and "),
+                type: type
+            }
+            return item;
+        });
+        // console.log(pokeType);
         displayPokemon(pokemon)
     });
 };
@@ -62,6 +68,7 @@ const tinderApp = () => {
 const displayPokemon = (pokemon) => {
     pokemon.forEach((pokeOne, index) => {
         let newEl = document.createElement('li');
+        // newEl.style.backgroundColor = color;
         newEl.classList.add('card');
         if (index === 0) {
             newEl.classList.add('is-visible');
@@ -71,15 +78,15 @@ const displayPokemon = (pokemon) => {
         <p class="card-subtitle"> Hey! I am a ${pokeOne.pokeType} type Pokemon and my height is ${pokeOne.height} inches tall!</p>`
         pokeInterface.appendChild(newEl);
     });
-        }
+}
 
 
-        function showNextPokemon() {
-            currentPokemon++;
-            let pokemons = document.querySelectorAll('.card');
-            pokemons.forEach((item, index) => {
-                console.log(item, index);
-                if (index === currentPokemon) {
+function showNextPokemon() {
+    currentPokemon++;
+    let pokemons = document.querySelectorAll('.card');
+    pokemons.forEach((item, index) => {
+        // console.log(item, index);
+        if (index === currentPokemon) {
                     item.className = 'card is-visible';
                 } else {
                     item.className = 'card';

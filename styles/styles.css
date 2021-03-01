@@ -127,6 +127,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #eee;
 }
 
 .card p {
@@ -139,6 +140,10 @@ body {
 
 .card h2 {
   margin-top: 20px;
+}
+
+#pokeInterface {
+  padding-left: 0;
 }
 
 #pokeInterface li img {
@@ -156,10 +161,37 @@ body {
   display: flex;
 }
 
+#pokeInterface2 {
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#pokeInterface2 li {
+  min-width: 50%;
+}
+
 #pokeInterface2 .card {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
+}
+
+#pokeInterface2 .card img {
+  width: 140px;
+}
+
+#pokeInterface2 .card ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 h2 {
@@ -174,9 +206,9 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -193,20 +225,18 @@ h2 {
   border: 1px solid black;
 }
 
-.carousel__button--like {
-  padding: 0px 20px;
-}
-
+.carousel__button--like,
 .carousel__button--dislike {
   padding: 0px 20px;
-}
-
-.carousel i {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 50%;
-  left: 54%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fas.fa-heart {
@@ -231,7 +261,6 @@ footer {
 
 footer a {
   text-decoration: none;
-  font-size: 3rem;
   color: orangered;
 }
 
@@ -258,13 +287,40 @@ footer a {
   padding-bottom: 150px;
 }
 
-@media (max-width: 640px) {
-  .carousel {
-    background-color: red;
+@media (max-width: 680px) {
+  #pokeInterface2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .bigWrapper {
-    max-width: 800px;
-    min-width: 450px;
+  .appBanner {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .appBanner {
+    width: 100%;
+  }
+  .carousel,
+  .carousel2 {
+    margin: 0;
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 320px) {
+  .appBanner {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .carousel2,
+  .carousel {
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px 0;
   }
 }
 

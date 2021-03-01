@@ -81,6 +81,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column; 
+      background-color: #eee;
 
       p {
         width: 30%;
@@ -95,9 +96,12 @@
       }
     }
 
-    #pokeInterface li img {
-      width: 140px;
-      text-align: center;
+    #pokeInterface{
+      padding-left: 0;
+      li img {
+        width: 140px;
+        text-align: center;
+      }
     }
 
     .card {
@@ -107,8 +111,25 @@
         display: flex;
     }
 
+    #pokeInterface2{
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        min-width: 50%;
+      }
+      // flex-wrap: wrap;
+    }
     #pokeInterface2 .card {
       display: flex !important;
+      // flex-direction: column;
+      img{
+        width: 140px;
+      }
+      ul{
+        display: flex;
+        flex-direction: row;
+      }
     }
 
 
@@ -123,7 +144,7 @@
 
     .buttonFlex1, .buttonFlex2 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 50%;
     }
@@ -138,20 +159,12 @@
       border: 1px solid black;
     }
 
-    .carousel__button--like {
-      padding: 0px 20px;
-    }
-
+    .carousel__button--like,
     .carousel__button--dislike {
       padding: 0px 20px;
-    }
-
-    .carousel i {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      top: 50%;
-      left: 54%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .fas.fa-heart {
@@ -175,7 +188,7 @@
 
       a {
         text-decoration: none;
-        font-size: 3rem;
+        // font-size: 3rem;
         color: orangered;
       }
     }
@@ -199,17 +212,35 @@
         // MEDIA QUERIES
         // MEDIA QUERIES
         // MEDIA QUERIES
+@media (max-width: 680px){
+  #pokeInterface2{
+    flex-direction: column;
+  }
+  .appBanner{
+    width: 80%;
+  }
+}
+@media (max-width: 500px){
+  .appBanner{
+    width: 100%;
+  }
+  .carousel,
+  .carousel2{
+    margin: 0;
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
 
-    @media (max-width: 640px) {
-      
-      .carousel {
-        background-color: red;
-      }
-      
-      .bigWrapper {
-        max-width: 800px;
-        min-width: 450px;
-      }
-    }
-
-
+@media (max-width: 320px){
+  .appBanner{
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .carousel2,
+  .carousel{
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px 0;
+  }
+}
