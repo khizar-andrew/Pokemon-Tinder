@@ -12,17 +12,31 @@
       justify-content: center;
       align-items: center;
       padding-bottom: 40px;
-      width: 100%;
+      width: 30%;
     }
 
-    .appBanner img {
-      width: 400px;
-      height: 200px;
+    .appBanner {
+     width: 40%;
+
+     .img1 {
+       width: 100%;
+     }
+
+     .img2 {
+       width: 95.3%;
+       
+     }
+
     }
 
     .bigWrapper {
       max-width: 1440px;
       background-color: black;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
     }
 
     .carousel-wrapper {
@@ -38,11 +52,10 @@
     }
 
     .carousel {
-      transform-style: preserve-3d;
       width: 80%;
       margin: 10px 30px;
       padding-bottom: 25px;
-      padding-top: 40px;
+      padding-top: 20px;
       background: #f8f8f8;
       border-radius: 20%;
       display: flex;
@@ -50,47 +63,54 @@
       align-items: center;
       flex-direction: column;
       padding-bottom: 150px;
+
+      ul {
+        border: 2px solid black;
+
+        li {
+          text-decoration: none;
+          list-style-type: none;
+        }
+      }
     }
 
-    #pokerInterface .card {
+  
+
+    .card {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column; 
+
+      p {
+        width: 30%;
+      }
+
+      p, h2 {
+        margin: 0px;
+      }
+
+      h2 {
+        margin-top: 20px;
+      }
     }
 
     #pokeInterface li img {
       width: 140px;
+      text-align: center;
     }
 
-
-    .carousel__photo {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      width: 65%;
-      margin: auto;
-      padding: 1rem 4rem;
-      z-index: 100;
-      transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+    .card {
+        display: none;
+    }
+    .card.is-visible {
+        display: flex;
     }
 
-    .carousel__photo.initial,
-    .carousel__photo.active {
-      opacity: 1;
-      position: relative;
-      z-index: 900;
+    #pokeInterface2 .card {
+      display: flex !important;
     }
 
-    .carousel__photo.prev,
-    .carousel__photo.next {
-      z-index: 800;
-    }
-    .carousel__photo.prev {
-      transform: translateX(-100%); /* Move 'prev' item to the left */
-    }
-    .carousel__photo.next {
-      transform: translateX(100%); /* Move 'next' item to the right */
-    }
 
     h2 {
       color: black;
@@ -101,47 +121,50 @@
     /* BUTTONS */
     /* BUTTONS */
 
+    .buttonFlex1, .buttonFlex2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    }
+
     .carousel__button--dislike,
     .carousel__button--like {
-      position: absolute;
-      top: 85%;
       width: 5rem;
       height: 5rem;
       background-color: #fff;
-      transform: translateY(-50%);
       border-radius: 50%;
       cursor: pointer;
-      z-index: 1001; /* Sit on top of everything */
       border: 1px solid black;
     }
 
     .carousel__button--like {
-      left: 410px;
+      padding: 0px 20px;
     }
 
     .carousel__button--dislike {
-      right: 410px;
+      padding: 0px 20px;
     }
 
     .carousel i {
       position: absolute;
       width: 10px;
       height: 10px;
-      // top: 50%;
-      // left: 54%;
+      top: 50%;
+      left: 54%;
     }
 
     .fas.fa-heart {
       font-size: 2rem;
-      top: 33%;
-      left: 31%;
+      top: 114.3%;
+      left: 46.1%;
       color: #26e7c7;
     }
 
     .fas.fa-times {
       font-size: 2.6rem;
-      top: 26%;
-      left: 33%;
+      top: 113.4%;
+      left: 51.9%;
       color: #fd5365;
     }
 
@@ -160,8 +183,6 @@
     // SECOND CAROUSEL
 
     .carousel2 {
-      position: relative;
-      transform-style: preserve-3d;
       width: 80%;
       margin: 10px 30px;
       padding-bottom: 25px;
@@ -174,51 +195,6 @@
       flex-direction: column;
       padding-bottom: 150px;
     }
-
-    // BUTTONS
-
-    .carouselButtonPrevious,
-    .carouselButtonNext {
-      // content: " ";
-      position: absolute;
-      top: 85%;
-      width: 5rem;
-      height: 5rem;
-      background-color: #fff;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 1001; /* Sit on top of everything */
-      width: 10px;
-      height: 10px;
-      border: 1px solid black;
-      width: 5rem;
-      height: 5rem;
-
-      // border-right: 2px solid black;
-      // border-bottom: 2px solid black;
-      // transform: translate(-50%, -50%) rotate(135deg);
-    }
-
-    .carouselButtonNext {
-      top: 500px;
-      left: 410px;
-      font-size: 2.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .carouselButtonPrevious {
-      top: 500px;
-      right: 410px;
-      font-size: 2.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-   
 
         // MEDIA QUERIES
         // MEDIA QUERIES
@@ -237,61 +213,3 @@
     }
 
 
-
-// .carousel__button--next::after {
-//   left: 47%;
-//   transform: translate(-50%, -50%) rotate(-45deg);
-// }
-
-// .carousel__button--prev::after,
-// .carousel__button--next::after {
-//   content: " ";
-//   position: absolute;
-//   width: 10px;
-//   height: 10px;
-//   top: 50%;
-//   left: 54%;
-//   border-right: 2px solid black;
-//   border-bottom: 2px solid black;
-//   transform: translate(-50%, -50%) rotate(135deg);
-// }
-
-// .carousel__button--next::after {
-//   left: 47%;
-//   transform: translate(-50%, -50%) rotate(-45deg);
-// }
-
-// OLD GALLERY CSS
-
-// .gallery {
-//     background-color: $mainBlue;
-
-//     .galleryFlex {
-//         @include center;
-
-//         img {
-//             width: calc((100% / 3) - 100px);
-//             margin: 80px 20px;
-//         }
-//     }
-
-//     @media (max-width: 1060px) {
-//         .galleryFlex {
-//             img {
-//                 width: calc((100% / 3) - 50px);
-//             }
-//         }
-//     }
-
-//     @media (max-width: 550px) {
-//         .galleryFlex {
-//             flex-direction: column;
-//             padding: 50px 0px;
-
-//             img {
-//                 width: 75%;
-//                 margin: 40px 20px;
-//             }
-//         }
-//     }
-// }

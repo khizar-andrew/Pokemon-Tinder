@@ -26,17 +26,37 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 40px;
+  width: 30%;
+}
+
+.appBanner {
+  width: 40%;
+}
+
+.appBanner .img1 {
   width: 100%;
 }
 
-.appBanner img {
-  width: 400px;
-  height: 200px;
+.appBanner .img2 {
+  width: 95.3%;
 }
 
 .bigWrapper {
   max-width: 1440px;
   background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .carousel-wrapper {
@@ -62,12 +82,10 @@ body {
 }
 
 .carousel {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
   width: 80%;
   margin: 10px 30px;
   padding-bottom: 25px;
-  padding-top: 40px;
+  padding-top: 20px;
   background: #f8f8f8;
   border-radius: 20%;
   display: -webkit-box;
@@ -86,7 +104,16 @@ body {
   padding-bottom: 150px;
 }
 
-#pokerInterface .card {
+.carousel ul {
+  border: 2px solid black;
+}
+
+.carousel ul li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,48 +123,43 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card p {
+  width: 30%;
+}
+
+.card p, .card h2 {
+  margin: 0px;
+}
+
+.card h2 {
+  margin-top: 20px;
 }
 
 #pokeInterface li img {
   width: 140px;
+  text-align: center;
 }
 
-.carousel__photo {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 65%;
-  margin: auto;
-  padding: 1rem 4rem;
-  z-index: 100;
-  -webkit-transition: opacity 0.5s, z-index 0.5s, -webkit-transform 0.5s;
-  transition: opacity 0.5s, z-index 0.5s, -webkit-transform 0.5s;
-  transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
-  transition: transform 0.5s, opacity 0.5s, z-index 0.5s, -webkit-transform 0.5s;
+.card {
+  display: none;
 }
 
-.carousel__photo.initial,
-.carousel__photo.active {
-  opacity: 1;
-  position: relative;
-  z-index: 900;
+.card.is-visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.carousel__photo.prev,
-.carousel__photo.next {
-  z-index: 800;
-}
-
-.carousel__photo.prev {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  /* Move 'prev' item to the left */
-}
-
-.carousel__photo.next {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  /* Move 'next' item to the right */
+#pokeInterface2 .card {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 h2 {
@@ -148,47 +170,56 @@ h2 {
 /* BUTTONS */
 /* BUTTONS */
 /* BUTTONS */
+.buttonFlex1, .buttonFlex2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
 .carousel__button--dislike,
 .carousel__button--like {
-  position: absolute;
-  top: 85%;
   width: 5rem;
   height: 5rem;
   background-color: #fff;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   border-radius: 50%;
   cursor: pointer;
-  z-index: 1001;
-  /* Sit on top of everything */
   border: 1px solid black;
 }
 
 .carousel__button--like {
-  left: 410px;
+  padding: 0px 20px;
 }
 
 .carousel__button--dislike {
-  right: 410px;
+  padding: 0px 20px;
 }
 
 .carousel i {
   position: absolute;
   width: 10px;
   height: 10px;
+  top: 50%;
+  left: 54%;
 }
 
 .fas.fa-heart {
   font-size: 2rem;
-  top: 33%;
-  left: 31%;
+  top: 114.3%;
+  left: 46.1%;
   color: #26e7c7;
 }
 
 .fas.fa-times {
   font-size: 2.6rem;
-  top: 26%;
-  left: 33%;
+  top: 113.4%;
+  left: 51.9%;
   color: #fd5365;
 }
 
@@ -205,9 +236,6 @@ footer a {
 }
 
 .carousel2 {
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
   width: 80%;
   margin: 10px 30px;
   padding-bottom: 25px;
@@ -228,56 +256,6 @@ footer a {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-bottom: 150px;
-}
-
-.carouselButtonPrevious,
-.carouselButtonNext {
-  position: absolute;
-  top: 85%;
-  width: 5rem;
-  height: 5rem;
-  background-color: #fff;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1001;
-  /* Sit on top of everything */
-  width: 10px;
-  height: 10px;
-  border: 1px solid black;
-  width: 5rem;
-  height: 5rem;
-}
-
-.carouselButtonNext {
-  top: 500px;
-  left: 410px;
-  font-size: 2.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.carouselButtonPrevious {
-  top: 500px;
-  right: 410px;
-  font-size: 2.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 @media (max-width: 640px) {
